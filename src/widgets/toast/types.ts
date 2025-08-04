@@ -1,7 +1,7 @@
 export type ToastType = 'success' | 'error' | 'warning' | 'info'
 
 export interface ToastItemProps {
-    id: number
+    id: string
     message: string
     type: ToastType
     buttonLabel?: string
@@ -14,7 +14,7 @@ export interface ToastItemProps {
 export type ToastContextType = {
     toasts: ToastItemProps[]
     addToast: (toast: Omit<ToastItemProps, 'id'>) => void
-    removeToast: (id: number) => void
+    removeToast: (id: string) => void
 }
 
 /* ToastContainer */

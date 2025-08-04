@@ -65,11 +65,12 @@ const LoginForm = () => {
             console.log('로그인 성공👍 :', values)
             // TODO: 성공시 navigate
         } catch (err: unknown) {
-            if (err instanceof ToastError) {
-                addToast({ type: err.toastType, message: err.message })
-            } else {
-                addToast({ type: 'error', message: '알 수 없는 오류가 발생했습니다.' })
-            }
+            const message = err instanceof ToastError ? err.message : '알 수 없는 오류가 발생했습니다.'
+
+            addToast({
+                type: err instanceof ToastError ? err.toastType : 'error',
+                message,
+            })
         }
     }
 

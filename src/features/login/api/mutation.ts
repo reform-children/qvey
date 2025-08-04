@@ -2,10 +2,8 @@ import { useMutation } from '@tanstack/react-query'
 import { login } from './loginApi'
 import type { LoginParams, LoginResponse } from '../types'
 import { ToastError } from '@/shared/errors'
-import { useToast } from '@/widgets/toast/hooks'
 
 export const useLoginMutation = () => {
-    const { addToast } = useToast() // useToast 훅을 사용하여 토스트 추가 함수 가져오기
     return useMutation<LoginResponse, Error, LoginParams>({
         mutationFn: login,
         onSuccess: (data) => {
@@ -15,9 +13,9 @@ export const useLoginMutation = () => {
         },
         onError: (error) => {
             if (error instanceof ToastError) {
-                addToast({ message: error.message, type: error.toastType })
+                throw new ToastError(error.message, error.toastType)
             } else {
-                addToast({ message: '알 수 없는 에러가 발생했습니다.', type: 'error' })
+                throw new ToastError('알 수 없는 에러가 발생했습니다.', 'error')
             }
         },
     })
