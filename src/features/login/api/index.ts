@@ -1,1 +1,1 @@
-export { loginApi } from "./loginApi";
+export { login } from './loginApi'

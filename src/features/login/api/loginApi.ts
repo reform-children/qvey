@@ -1,11 +1,12 @@
-import axios from 'axios'
+import { isAxiosError } from 'axios'
 import { LOGIN_API } from '../../../shared/config'
 import type { LoginParams, LoginResponse } from '../types'
 import { ToastError } from '@/shared/errors'
+import axiosInstance from '@/shared/api/axios'
 
-export const loginApi = async (params: LoginParams): Promise<LoginResponse> => {
+export const login = async (params: LoginParams): Promise<LoginResponse> => {
     try {
-        const response = await axios.post<LoginResponse>(LOGIN_API, params)
+        const response = await axiosInstance.post<LoginResponse>(LOGIN_API, params)
 
         const { token, user } = response.data
 
@@ -15,7 +16,7 @@ export const loginApi = async (params: LoginParams): Promise<LoginResponse> => {
 
         return { token, user }
     } catch (error: unknown) {
-        if (axios.isAxiosError(error)) {
+        if (isAxiosError(error)) {
             const message = error.response?.data?.message || '로그인에 실패하였습니다.'
             throw new ToastError(message, 'error')
         }
