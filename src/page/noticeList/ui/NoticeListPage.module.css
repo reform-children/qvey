@@ -1,0 +1,58 @@
+.page {
+    padding: 32px;
+    background-color: #fefcf6;
+    min-height: 100vh;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    font-size: 14px;
+}
+
+.titleCell {
+    cursor: pointer;
+    color: #333;
+}
+
+.important {
+    background-color: #fff3f3;
+    color: #d00000;
+    font-weight: bold;
+}
+
+.link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.pagination {
+    margin-top: 16px;
+    text-align: center;
+}
+.pagination button {
+    margin: 0 4px;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+.activePage {
+    font-weight: bold;
+    border-bottom: 2px solid #333;
+}

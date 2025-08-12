@@ -4,7 +4,9 @@ import { Dashboard } from '../../widgets/dashboard'
 import { Blank } from '../../widgets/blank'
 import { RegisterPage } from '../../page/register'
 import { NoticeNewPage } from '../../page/noticeNew'
-import { LoginPage } from '../../page/login'
+import { NoticeListPage } from '../../page/noticeList'
+import { NoticeDetailPage } from '../../page/noticeList'
+
 import { BookPage } from '../../page/book'
 import { BoardPage } from '@/page/board'
 import { DevPage } from '@/page/dev/ui'
@@ -19,17 +21,20 @@ const router = createBrowserRouter([
             { path: '/notice/new', Component: NoticeNewPage },
             { path: '/dev', Component: DevPage },
             { path: '/demo/toast', Component: DEMO_ToastPopupPage },
+            {
+                path: '/notice',
+                children: [
+                    { index: true, Component: NoticeListPage },
+                    { path: 'new', Component: NoticeNewPage },
+                    { path: ':id', Component: NoticeDetailPage },
+                ],
+            },
         ],
     },
     {
         path: '/register',
         Component: Blank,
         children: [{ index: true, Component: RegisterPage }],
-    },
-    {
-        path: '/login',
-        Component: Blank,
-        children: [{ index: true, Component: LoginPage }],
     },
     {
         path: '/book',

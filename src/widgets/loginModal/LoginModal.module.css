@@ -1,0 +1,36 @@
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--font-color-black);
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: var(--font-color-gray);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.signupBox {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+.signupBox span {
+    margin-right: 0.4rem;
+}
+
+.link {
+    color: #4f46e5;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.link:hover {
+    background-color: unset;
+    color: #8b5cf6;
+}

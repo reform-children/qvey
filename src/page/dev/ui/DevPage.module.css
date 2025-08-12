@@ -1,3 +1,14 @@
+.container {
+    width: 100%;
+    max-width: 400px;
+    margin: 4rem auto;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    border: solid 0.25rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+
 .title {
     font-size: 2rem;
     font-weight: 700;
@@ -58,7 +69,7 @@
 
 .passwordWrapper input {
     flex: 1;
-    padding-right: 2.5rem; /* 아이콘 공간 확보 */
+    padding-right: 2.5rem;
 }
 
 .iconButton {
@@ -121,4 +132,15 @@
 .loginBtn:hover {
     background: linear-gradient(to right, #4f46e5, #7c3aed);
     color: #fff;
+}
+
+.signupBox {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+.signupBox span {
+    margin-right: 0.4rem;
 }
