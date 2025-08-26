@@ -10,6 +10,7 @@ import { NoticeDetailPage } from '../../page/noticeList'
 import { BookPage } from '../../page/book'
 import { DevPage } from '@/page/dev/ui'
 import { DEMO_ToastPopupPage } from '@/page/DEMO'
+import FilterDemoPage from '@/features/demoFilter/ui/filterDemoPage'
 
 const router = createBrowserRouter([
     {
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
             { path: '/dev', Component: DevPage },
             { path: '/demo/toast', Component: DEMO_ToastPopupPage },
             { path: '/book', Component: BookPage },
+            { path: '/filter-demo', Component: FilterDemoPage },
             {
                 path: '/notice',
                 children: [
