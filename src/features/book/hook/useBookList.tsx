@@ -1,4 +1,3 @@
-// features/book/hook/useBookList.ts
 import { useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { fetchBooks } from '../api'

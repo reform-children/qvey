@@ -1,4 +1,3 @@
-// features/book/ui/BookList.tsx
 import { useState } from 'react'
 import { useBookList } from '../hook/useBookList'
 import type { Book } from '../types'

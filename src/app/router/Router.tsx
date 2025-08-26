@@ -6,11 +6,9 @@ import { RegisterPage } from '../../page/register'
 import { NoticeNewPage } from '../../page/noticeNew'
 import { NoticeListPage } from '../../page/noticeList'
 import { NoticeDetailPage } from '../../page/noticeList'
-
 import { BookPage } from '../../page/book'
 import { DevPage } from '@/page/dev/ui'
-import { DEMO_ToastPopupPage } from '@/page/DEMO'
-import FilterDemoPage from '@/features/demoFilter/ui/filterDemoPage'
+import { DEMO_FilterPage, DEMO_SearchPage, DEMO_ToastPopupPage } from '@/page/DEMO'
 
 const router = createBrowserRouter([
     {
@@ -21,8 +19,9 @@ const router = createBrowserRouter([
             { path: '/notice/new', Component: NoticeNewPage },
             { path: '/dev', Component: DevPage },
             { path: '/demo/toast', Component: DEMO_ToastPopupPage },
+            { path: '/demo/search', Component: DEMO_SearchPage },
+            { path: '/demo/filter', Component: DEMO_FilterPage },
             { path: '/book', Component: BookPage },
-            { path: '/filter-demo', Component: FilterDemoPage },
             {
                 path: '/notice',
                 children: [

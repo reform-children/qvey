@@ -2,7 +2,7 @@ import { useBookList } from '@/features/book/hook/useBookList'
 import type { Book } from '@/features/book/types'
 import Filter from '@/shared/components/filter/Filter'
 
-export default function FilterDemoPage() {
+export default function DEMO_FilterPage() {
     const { list, loading, error } = useBookList()
 
     const handleFilterChange = (selected: string[]) => {
