@@ -1,0 +1,47 @@
+.container {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 12px;
+  max-width: 500px;
+  background: #fff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.clearButton {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 13px;
+  color: #007bff;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.option {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #f9f9f9;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.option:hover {
+  background: #eee;
+}
+
+.active {
+  border-color: #007bff;
+  background: #007bff;
+  color: white;
+}
