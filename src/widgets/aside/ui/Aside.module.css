@@ -3,6 +3,31 @@
     color: var(--font-color-white);
     width: 200px;
     font-size: 20px;
-    
+    display: flex;
+    flex-direction: column;
 }
 .container > .logo { padding: 1em; }
+
+.nav { display: flex; flex-direction: column; flex: 1; }
+
+.nav > ul { margin-left: 0.5em; flex: 1; }
+.nav > ul > li { background-color: var(--background-color-cream); }
+.nav > ul > li:hover,
+.nav > ul > li.on { background-color: var(--background-color-dark-green);  }
+
+.nav > ul > li > .wrap { padding: 0.5em; background-color: var(--background-color-dark-green); }
+.nav > ul > li:hover > .wrap,
+.nav > ul > li.on > .wrap { background-color: var(--background-color-cream); border-radius: 16px 0 0 16px;}
+
+.nav > ul > li:has(+ li:hover) > .wrap,
+.nav > ul > li:has(+ li.on) > .wrap { border-radius: 0 0 16px 0;}
+
+.nav > ul > li:hover + li,
+.nav > ul > li.on + li { }
+
+.nav > ul > li:hover + li > .wrap,
+.nav > ul > li.on + li > .wrap { border-radius: 0 16px 0 0 ;}
+
+.nav > ul > li > .wrap > a { font-weight: 500; }
+.nav > ul > li:hover > .wrap > a,
+.nav > ul > li.on > .wrap > a { color: var(--font-color-dark-green);}
