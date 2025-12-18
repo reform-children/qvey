@@ -73,7 +73,6 @@ function wrapAuthRoute(routes: AuthRouteObject[]): RouteObject[] {
               }
     })
 }
-console.log(wrapAuthRoute(routes))
 
 const router = createBrowserRouter(wrapAuthRoute(routes))
 
