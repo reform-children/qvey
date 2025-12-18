@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider, type RouteObject } from 'react-router'
 import { HomePage } from '../../page/home'
-import { Dashboard } from '../../widgets/dashboard'
+import { Dashboard } from '../../page/dashboard'
 import { Blank } from '../../widgets/blank'
 import { RegisterPage } from '../../page/register'
 import { NoticeNewPage } from '../../page/noticeNew'
