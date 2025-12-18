@@ -1,5 +1,5 @@
 import style from './Dashboard.module.css'
-import { Aside } from '../../aside'
+import { Aside } from '../../../widgets/aside'
 import { Outlet } from 'react-router'
 
 function Dashboard() {

@@ -1,0 +1,8 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    border-top: 2px solid var(--color-black);
+    background-color: var(--background-color-dark-green);
+}

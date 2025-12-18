@@ -1,0 +1,22 @@
+ul { margin-left: 0.5em; flex: 1; }
+ul > li { background-color: var(--background-color-cream); }
+
+ul > li:hover,
+ul > li.on { background-color: var(--background-color-dark-green);  }
+
+ul > li > .wrap { padding: 0.5em; background-color: var(--background-color-dark-green); }
+ul > li:hover > .wrap,
+ul > li.on > .wrap { background-color: var(--background-color-cream); border-radius: 16px 0 0 16px;}
+
+ul > li:has(+ li:hover) > .wrap,
+ul > li:has(+ li.on) > .wrap { border-radius: 0 0 16px 0;}
+
+ul > li:hover + li,
+ul > li.on + li { }
+
+ul > li:hover + li > .wrap,
+ul > li.on + li > .wrap { border-radius: 0 16px 0 0 ;}
+
+ul > li > .wrap > a { font-weight: 500; }
+ul > li:hover > .wrap > a,
+ul > li.on > .wrap > a { color: var(--font-color-dark-green);}
