@@ -2,7 +2,7 @@ import { LoginForm } from '@/features/login/ui'
 import { Modal } from '@/shared/modal/ui/Modal'
 import styles from './LoginModal.module.css'
 
-const LoginModal = ({ onClose }: { onClose: () => void }) => {
+const LoginModal = ({ onClose = () => {} }: { onClose?: () => void }) => {
     return (
         <Modal onClose={onClose}>
             <h1 className={styles.title}>Welcome Back 🥳</h1>

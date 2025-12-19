@@ -6,3 +6,5 @@
     border-top: 2px solid var(--color-black);
     background-color: var(--background-color-dark-green);
 }
+.container > i {}
+.container > span { cursor: pointer; }
