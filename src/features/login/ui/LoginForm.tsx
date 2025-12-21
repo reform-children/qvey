@@ -1,10 +1,10 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import type { LoginErrors, LoginValues } from '../types'
-import { validateLogin } from '../model'
 import { useLogin } from '../hook'
 import styles from './LoginForm.module.css'
 import { MdVisibility, MdVisibilityOff } from 'react-icons/md'
 import { validateEmail, validatePassword } from '@/shared/lib/validators'
+import { loginRequest } from '../model/loginModel'
 
 const LoginForm = () => {
     useLogin()
@@ -52,15 +52,23 @@ const LoginForm = () => {
         }
     }
 
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault()
+    const handleSubmit = useCallback(
+        async (e: React.FormEvent) => {
+            e.preventDefault()
 
-        const isValid = validateLogin(values)
-        if (!isValid) return
-
-        // await login(values)
-        console.log('로그인 성공👍 :', values)
-    }
+            // TODO
+            // const isValid = validateLogin(values)
+            // if (!isValid) return
+            try {
+                const response = await loginRequest({ email: values.email, password: values.password })
+                console.log(response.accessToken)
+            } catch (err) {
+                // TODO
+                throw err
+            }
+        },
+        [values]
+    )
 
     const [showPassword, setShowPassword] = useState(false)
 
