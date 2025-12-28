@@ -1,4 +1,4 @@
-import { createContext, useCallback, useState, type PropsWithChildren } from 'react'
+import { createContext, useCallback, useMemo, useState, type PropsWithChildren } from 'react'
 
 interface AuthContext {
     /**
@@ -20,17 +20,15 @@ export function AuthProvider({ children }: PropsWithChildren) {
 
     const _setAccessToken = useCallback((token: string) => {
         setAccessToken(token)
-        /**
-         * TODO
-         * Toast Message 으로 변경
-         */
-        alert('로그인 되었습니다.')
     }, [])
 
-    const result = {
-        setAccessToken: _setAccessToken,
-        accessToken,
-    }
+    const result = useMemo(
+        () => ({
+            setAccessToken: _setAccessToken,
+            accessToken,
+        }),
+        [accessToken]
+    )
 
     return <AuthContext value={result}>{children}</AuthContext>
 }
